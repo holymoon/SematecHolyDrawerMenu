@@ -39,6 +39,13 @@ public class HolyRecyclerAdapter  extends RecyclerView.Adapter<HolyRecyclerAdapt
                 v.getContext().startActivity(intent);
             }
         });
+        holder.btnDial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(),DialActivity.class);
+                v.getContext().startActivity(i);
+            }
+        });
 
     }
 
