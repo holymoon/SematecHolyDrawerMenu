@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SematecHolyDrawerMenu</string>
+    <string name="drawer_menu">DRAWER MENU</string>
 </resources>
