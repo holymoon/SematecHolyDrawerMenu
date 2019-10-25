@@ -1,5 +1,7 @@
 package com.example.sematecholydrawermenu;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +23,23 @@ public class HolyRecyclerAdapter  extends RecyclerView.Adapter<HolyRecyclerAdapt
 
     @Override
     public void onBindViewHolder(@NonNull HolyRecyclerViewHolder holder, int position) {
-        switch(position){
+        switch (position) {
             case 0:
-            holder.btnProfile.setText("PROFILE");
-            break;
+                holder.btnProfile.setText("PROFILE");
+                break;
             case 1:
-            holder.btnDial.setText("DIAL");
-            break;
+                holder.btnDial.setText("DIAL");
+                break;
+
         }
+        holder.btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),ReviewActivity.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override
