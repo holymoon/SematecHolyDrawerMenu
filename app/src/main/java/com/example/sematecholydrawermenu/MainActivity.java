@@ -3,6 +3,7 @@ package com.example.sematecholydrawermenu;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -26,5 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        RecyclerView recycler = findViewById(R.id.recycler);
+
     }
 }
