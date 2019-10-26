@@ -10,6 +10,12 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,19 +23,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnDrawerMenu = findViewById(R.id.btnDrawerMenu);
-        btnDrawerMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("PROFILE");
+        list.add("DIAL");
+
+
+
                 DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
 
 //To Open:
                 drawerLayout.openDrawer(GravityCompat.START);
 
-            }
-        });
         RecyclerView recycler = findViewById(R.id.recycler);
-        HolyRecyclerAdapter adapter = new HolyRecyclerAdapter();
+        HolyRecyclerAdapter adapter = new HolyRecyclerAdapter(list);
         recycler.setAdapter(adapter);
         recycler.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.VERTICAL,false));
 

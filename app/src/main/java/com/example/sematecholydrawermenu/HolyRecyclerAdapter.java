@@ -10,7 +10,13 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class HolyRecyclerAdapter  extends RecyclerView.Adapter<HolyRecyclerAdapter.HolyRecyclerViewHolder> {
+    ArrayList<String> myList;
+    public HolyRecyclerAdapter(ArrayList list){
+        myList = list;
+    }
 
 
     @NonNull
@@ -23,44 +29,22 @@ public class HolyRecyclerAdapter  extends RecyclerView.Adapter<HolyRecyclerAdapt
 
     @Override
     public void onBindViewHolder(@NonNull HolyRecyclerViewHolder holder, int position) {
-        switch (position) {
-            case 0:
-                holder.btnProfile.setText("PROFILE");
-                break;
-            case 1:
-                holder.btnDial.setText("DIAL");
-                break;
+        holder.btnName.setText(myList.get(position));
 
-        }
-        holder.btnProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),ReviewActivity.class);
-                v.getContext().startActivity(intent);
-            }
-        });
-        holder.btnDial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(),DialActivity.class);
-                v.getContext().startActivity(i);
-            }
-        });
 
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return myList.size();
     }
 
     class HolyRecyclerViewHolder extends RecyclerView.ViewHolder{
-        Button btnProfile;
-        Button btnDial;
+        Button btnName;
         public HolyRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-           btnProfile = itemView.findViewById(R.id.btnProfile);
-           btnDial = itemView.findViewById(R.id.btnDial);
+           btnName = itemView.findViewById(R.id.btnName);
+
 
         }
     }
