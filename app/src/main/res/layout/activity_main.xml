@@ -10,6 +10,14 @@
         android:layout_height="match_parent"
         android:gravity="left">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_toolbarmain"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:background="@color/colorPurple">
+        </androidx.appcompat.widget.Toolbar>
+
+
     </LinearLayout>
 
     <LinearLayout

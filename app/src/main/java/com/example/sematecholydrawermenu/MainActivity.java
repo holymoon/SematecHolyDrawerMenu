@@ -1,6 +1,7 @@
 package com.example.sematecholydrawermenu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> list = new ArrayList<>();
         list.add("PROFILE");
         list.add("DIAL");
-
+        initViews();
 
 
 
@@ -44,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    }
+    public void initViews() {
+           Toolbar tbtoolbarmain = findViewById(R.id.tb_toolbarmain);
+            setSupportActionBar(tbtoolbarmain);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+            getSupportActionBar().setIcon(R.mipmap.menu);
+            getSupportActionBar().setTitle(" ");
+            LinearLayout.LayoutParams layoutParams
+                    = (LinearLayout.LayoutParams) tbtoolbarmain.getLayoutParams();
+
+            tbtoolbarmain.setLayoutParams(layoutParams);
+
+        }
+}
 
 
