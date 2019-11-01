@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> list = new ArrayList<>();
         list.add("PROFILE");
         list.add("DIAL");
+        list.add("SHOW MOVIE");
         initViews();
 
 

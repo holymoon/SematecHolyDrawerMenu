@@ -48,6 +48,16 @@ public class HolyRecyclerAdapter  extends RecyclerView.Adapter<HolyRecyclerAdapt
                }
            });
         }
+       if(holder.btnName.getText() == "SHOW MOVIE"){
+           holder.btnName.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent i2 = new Intent(v.getContext(),MovieActivity.class);
+                   v.getContext().startActivity(i2);
+               }
+           });
+       }
+
 
 
 
