@@ -57,6 +57,16 @@ public class HolyRecyclerAdapter  extends RecyclerView.Adapter<HolyRecyclerAdapt
                }
            });
        }
+        if(holder.btnName.getText() == "PERMISSION"){
+            holder.btnName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i3 = new Intent(v.getContext(),CameraActivity.class);
+                    v.getContext().startActivity(i3);
+
+                }
+            });
+        }
 
 
 

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         list.add("PROFILE");
         list.add("DIAL");
         list.add("SHOW MOVIE");
+        list.add("PERMISSION");
         initViews();
 
 
